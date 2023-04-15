@@ -1,0 +1,14 @@
+run = "node tools"
+
+[nix]
+channel = "stable-22_11"
+
+[packager]
+language = "nodejs-npm"
+
+[packager.features]
+packageSearch = true
+guessImports = true
+
+[deployment]
+run = ["sh", "-c", "node tools"]
