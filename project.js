@@ -114,26 +114,30 @@ const printRows = (rows) => {
 };
 
 const getWinnings = (rows, bet, lines) => {
-  let winnings = 0;
-
-  for (let row = 0; row < lines; row++) {
-    const symbols = rows[row];
-    let allSame = true;
-
-    for (const symbol of symbols) {
-      if (symbol != symbols[0]) {
-        allSame = false;
-        break;
+    let winnings = 0;
+    const possibiliites=[];
+    for (let row = 0; row < ROWS; row++) {
+      const symbols = rows[row];
+      let allSame = true;
+      
+      for (const symbol of symbols) {
+        if (symbol != symbols[0]) {
+          allSame = false;
+          break;
+        }
+      }
+  
+      if (allSame) {
+          possibiliites.push(bet * SYMBOL_VALUES[symbols[0]]);
       }
     }
-
-    if (allSame) {
-      winnings += bet * SYMBOL_VALUES[symbols[0]];
+    possibiliites.sort();
+    possibiliites.reverse();
+    for(let i=0;i<possibiliites.length;i++){
+        if(i<lines) winnings+=possibiliites[i];
     }
-  }
-
-  return winnings;
-};
+    return winnings;
+  };
 
 const game = () => {
   let balance = deposit();
@@ -157,7 +161,10 @@ const game = () => {
 
     const playAgain = prompt("Do you want to play again (y/n)? ");
 
-    if (playAgain != "y") break;
+    if (playAgain != "y"){
+        console.log("Your final balance is : "+balance);
+        break;
+    }
   }
 };
 
