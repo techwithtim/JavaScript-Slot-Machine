@@ -1,10 +1,10 @@
-// 1. Despot some money
-// 2. Determine number of lines to bet on
+// 1. Deposit some money
+// 2. Determine the number of lines to bet on
 // 3. Collect a bet amount
 // 4. Spin the slot machine
 // 5. check if the user won
-// 6. give the user their winnings
-// 7. play again
+// 6. Give the user their winnings
+// 7. Play again
 
 const prompt = require("prompt-sync")();
 
