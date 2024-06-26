@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Slot Machine Game</h1>
+        <div id="balance">Balance: $0</div>
+        <input type="number" id="deposit" placeholder="Enter deposit amount">
+        <button id="deposit-button" class="button gold">Deposit</button>
+        <input type="number" id="lines" placeholder="Number of lines (1-3)">
+        <input type="number" id="bet" placeholder="Bet amount per line">
+        <button id="spin-button" class="button red">Spin</button>
+        <div id="reels">
+            <div id="reel1" class="reel"></div>
+            <div id="reel2" class="reel"></div>
+            <div id="reel3" class="reel"></div>
+        </div>
+        <div id="result-message"></div>
+        <button id="play-again-button" class="button gold" style="display: none;">Play Again</button>
+    </div>
+    <script src="project.js"></script>
+</body>
+</html>
